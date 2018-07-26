@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+
+
+
+<head>
+    <!--
+
+        Simple React-based web page to show live train departure times for a particular MBTA
+        commuter rail station, using the MBTA's V3 API.
+
+        This code is Copyright (C) 2018 by Edmund Schweppe, and is only intended for use as
+        a technical demonstrator.
+
+        There would be a *lot* of additional work needed to make this something that could
+        honestly be deployed to production, including:
+            Using site-specific, production copies of the React and React-DOM code
+            Running the Babel JSX conversion server-side
+            Running all the code through appropriate minifiers
+            Separating Javascript code into appropriate files
+            Taking advantage of If-Modified-Since and Last-Modified headers
+            Enhanced UI to support station selection
+            And maybe adding some CSS to make this not ugly ...
+
+    -->
+
+    <title>Demonstration MBTA Commuter Rail Live Status</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <div id="main_container">
+
+    </div>
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <!-- (In the real world, we'd want to have our own copies, and not rely on someone else's CDN)-->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin ></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin ></script>
+
+    <!-- In-browser Babel JSX converter (don't try this in the real world) -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <!-- Load the React component. Needs to be text/babel for in-browser JSX conversion.-->
+    <script src="commuterrail.js" type="text/babel"></script>
+
+
+</body>
+</html>
